@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="text-center mt-3 pt-3 border col-4">
+    <p>From: {{comment_author.username}} {{comment_author.id}}</p>
+    <p>{{content}}</p>
+    <p>From: {{comment_author.username}} {{comment_author.id}} {{user_id}}</p>
+        {{#if (is_equal user_id comment_author.id)}}
+        <div class="mt-4">
+          <button class="btn btn-info"><a href="/blogs/admin/edit/{{singlePostData.id}}" style="color: white">Edit</a></button>
+          <button class="btn btn-danger" id="delete-post" value={{singlePostData.id}}>Delete</button>
+        </div>
+      <h2>Success!</h2>
+    {{/if}}
+  </div>
+  <div class="col-4"></div>
+</div>
